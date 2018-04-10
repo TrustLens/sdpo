@@ -1,0 +1,17 @@
+document
+
+entity(var:usedSystem, [prov:type="prov:Collection"]))
+entity(var:usedPlatform)
+entity(var:installedSystem)
+entity(var:hostingPlatform)
+
+activity(var:installActivity,-,-,[prov:type="sdpo:SystemInstallation"])
+
+used(var:installActivity, var:usedSystem)
+used(var:installActivity, var:usedPlatform)
+wasGeneratedBy(var:installedSystem, var:installActivity)
+wasGeneratedBy(var:hostingPlatform, var:installActivity)
+specialisationOf(var:installedSystem, var:usedSystem)
+specialisationOf(var:hostingPlatform, var:usedPlatform)
+
+endDocument

@@ -1,0 +1,18 @@
+document
+
+   entity(var:installedSystem)
+   entity(var:hostingPlatform)
+   entity(var:removedSystem)
+   entity(var:updatedPlatform)
+
+
+   activity(var:removeActivity,-,-,[prov:type="sdpo:SystemRemoval"])
+
+   used(var:removalActivity, var:installedSystem)
+   used(var:removalActivity, var:hostingPlatform)
+   wasGeneratedBy(var:removedSystem, var:removalActivity)
+   wasGeneratedBy(var:updatedPlatform, var:removalActivity)
+   revisionOf(var:removedSystem, var:installedSystem)
+   revisionOf(var:updatedPlatform, var:hostingPlatform)
+
+endDocument

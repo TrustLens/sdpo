@@ -1,0 +1,21 @@
+// Simple provenance template for a Calibration activity, which calibrated the used system (var:system), and ended at var:et.
+
+document
+
+   prefix prov <http://www.w3.org/ns/prov#> 
+   prefix xsd <http://www.w3.org/2001/XMLSchema#> 
+   prefix tmpl <http://openprovenance.org/tmpl#> 
+   prefix var <http://openprovenance.org/var#> 
+   prefix vargen <http://openprovenance.org/vargen#>
+   prefix sdpo <http://www.w3id.org/sdpo/>
+   prefix ssn <http://www.w3.org/ns/ssn/>
+   prefix sosa <http://www.w3.org/ns/sosa/>
+   
+
+   bundle vargen:bundleId 
+      entity(var:system)
+      
+      activity(var:calibrationActivity, -, var:et, [prov:type='sdpo:Calibration'])
+      used(var:calibrationActivity, var:system, -)
+   endBundle
+endDocument

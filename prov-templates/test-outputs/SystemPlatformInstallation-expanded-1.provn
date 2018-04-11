@@ -1,0 +1,20 @@
+document
+bundle uuid:ecd80921-a421-42a4-ab97-4a2155c627ae
+prefix ssn <http://www.w3.org/ns/ssn/>
+prefix ex <http://example.com/#>
+prefix uuid <urn:uuid:>
+prefix sdpo <http://www.w3id.org/sdpo/>
+
+entity(ex:smartMeter,[prov:type = 'ssn:System'])
+entity(ex:platform)
+entity(ex:smartMeter_v1)
+entity(ex:platform_v1)
+activity(ex:install,-,-,[prov:type = 'sdpo:SystemInstallation'])
+specializationOf(ex:smartMeter_v1,ex:smartMeter)
+specializationOf(ex:platform_v1,ex:platform)
+used(ex:install,ex:smartMeter,-)
+used(ex:install,ex:platform,-)
+wasGeneratedBy(ex:smartMeter_v1,ex:install,-)
+wasGeneratedBy(ex:platform_v1,ex:install,-)
+endBundle
+endDocument

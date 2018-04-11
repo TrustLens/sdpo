@@ -1,5 +1,11 @@
 document
 
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tmpl: <http://openprovenance.org/tmpl#> .
+@prefix var: <http://openprovenance.org/var#> .
+@prefix sdpo: <http://www.w3id.org/sdpo/>.
+
    entity(var:usedSystem, [prov:type="prov:Collection"]))
    entity(var:usedPlatform)
    entity(var:installedSystem)

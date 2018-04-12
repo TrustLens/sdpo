@@ -1,0 +1,14 @@
+document
+prefix prov <http://www.w3.org/ns/prov#> 
+prefix xsd <http://www.w3.org/2001/XMLSchema#> 
+prefix tmpl <http://openprovenance.org/tmpl#> 
+prefix var <http://openprovenance.org/var#> 
+prefix ex <http://example.com/> 
+
+entity(var:system, [tmpl:value_0 = 'ex:smartMeter'])
+entity(var:systemToBeReplaced, [tmpl:value_0 = 'ex:sensor1'])
+entity(var:revisedSystem, [tmpl:value_0 = 'ex:smartMeter_v1'])
+entity(var:replacementSystem, [tmpl:value_0 = 'ex:sensor2'])
+entity(var:replacementActivity, [tmpl:value_0 = 'ex:replaceSensor'])
+entity(var:platform, [tmpl:value_0 = 'ex:platform'])
+entity(var:revisedPlatform, [tmpl:value_0 = 'ex:platform_v1'])

@@ -1,0 +1,20 @@
+document
+bundle uuid:8fa2ea3d-42a5-4223-a27b-91e06d444a7f
+prefix ex <http://example.com/>
+prefix uuid <urn:uuid:>
+prefix sdpo <http://www.w3id.org/sdpo/>
+
+entity(ex:sensor1)
+entity(ex:sensor2)
+activity(ex:replaceSensor,-,-,[prov:type = 'sdpo:SystemReplacement'])
+used(uuid:e5a951d8-1ab0-4f85-be91-00e54a307aae;ex:replaceSensor,ex:sensor1,-,[prov:role = 'sdpo:ReplacedSystem'])
+used(uuid:8bc80feb-a7d3-41b5-b589-b74123da245a;ex:replaceSensor,ex:sensor2,-,[prov:role = 'sdpo:ReplacementSystem'])
+wasGeneratedBy(ex:sensor2,ex:replaceSensor,-)
+entity(ex:platform)
+entity(ex:platform_v1)
+used(ex:replaceSensor,ex:platform,-)
+wasInvalidatedBy(ex:platform,ex:replaceSensor,-)
+wasGeneratedBy(ex:platform_v1,ex:replaceSensor,-)
+wasDerivedFrom(uuid:68a7185b-78a9-4546-9dd8-ebd5e8410cd0;ex:platform_v1, ex:platform, ex:replaceSensor, -, -,[prov:type = 'prov:Revision'])
+endBundle
+endDocument

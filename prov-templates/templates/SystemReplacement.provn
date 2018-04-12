@@ -1,0 +1,34 @@
+// Basic template for replacing a ssn:System which is hosted on a platform
+
+document
+
+   prefix prov <http://www.w3.org/ns/prov#> 
+   prefix xsd <http://www.w3.org/2001/XMLSchema#> 
+   prefix tmpl <http://openprovenance.org/tmpl#> 
+   prefix var <http://openprovenance.org/var#> 
+   prefix vargen <http://openprovenance.org/vargen#>
+   prefix sdpo <http://www.w3id.org/sdpo/>
+   prefix ssn <http://www.w3.org/ns/ssn/>
+   prefix sosa <http://www.w3.org/ns/sosa/>
+   
+   
+   bundle vargen:bundleId
+      entity(var:systemToBeReplaced, [sosa:isHostedBy='var:platform'])
+      entity(var:replacementSystem, [sosa:isHostedBy='var:revisedPlatform'])
+   
+      activity(var:replacementActivity, -, -, [prov:type='sdpo:SystemReplacement'])
+      used(vargen:u1; var:replacementActivity, var:systemToBeReplaced, -, [prov:role='sdpo:ReplacedSystem'])
+      used(vargen:u2; var:replacementActivity, var:replacementSystem, -, [prov:role='sdpo:ReplacementSystem'])
+      wasGeneratedBy(var:replacementSystem, var:replacementActivity, -)
+      
+      entity(var:platform, [sosa:hosts='var:systemToBeReplaced'])
+      entity(var:revisedPlatform, [sosa:hosts='var:replacementSystem')
+      used(var:replacementActivity, var:platform, -)
+      wasInvalidatedBy(var:platform, var:replacementActivity, -)
+      wasGeneratedBy(var:revisedPlatform, var:replacementActivity, -)
+      wasDerivedFrom(vargen:d2; var:revisedPlatform, var:platform, var:replacementActivity, -, -,  [prov:type='prov:Revision'])
+     
+       
+   endBundle
+   
+endDocument

@@ -14,7 +14,9 @@
                             owl:versionInfo 0.1 ;
                             <http://purl.org/dc/terms/description> "The Semantic Sensor Network System Deployment Provenance Ontology (SDPO) is designed to support describing the activities, entities, and agents that have influenced the deployment of a SSN System."@en ;
                             <http://purl.org/dc/terms/created> "12-04-2018" ;
-                            <http://purl.org/dc/terms/creator> "David Corsar" .
+                            <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by-nc-sa/2.0/" ;
+                            <http://purl.org/dc/terms/creator> "Milan Markovic"@en ,
+                                                               "David Corsar" .
 
 #################################################################
 #    Classes

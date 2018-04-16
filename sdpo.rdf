@@ -20,6 +20,8 @@
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
         <terms:description xml:lang="en">The Semantic Sensor Network System Deployment Provenance Ontology (SDPO) is designed to support describing the activities, entities, and agents that have influenced the deployment of a SSN System.</terms:description>
         <terms:created>12-04-2018</terms:created>
+        <terms:license>https://creativecommons.org/licenses/by-nc-sa/2.0/</terms:license>
+        <terms:creator xml:lang="en">Milan Markovic</terms:creator>
         <terms:creator>David Corsar</terms:creator>
     </owl:Ontology>
     

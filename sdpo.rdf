@@ -1,0 +1,426 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3id.org/sdpo#"
+     xml:base="http://www.w3id.org/sdpo"
+     xmlns:schema="http://schema.org/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <owl:Ontology rdf:about="http://www.w3id.org/sdpo">
+        <owl:imports rdf:resource="http://purl.org/net/p-plan#"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/sosa/prov"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/ssn/"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
+        <terms:description xml:lang="en">The Semantic Sensor Network System Deployment Provenance Ontology (SDPO) is designed to support describing the activities, entities, and agents that have influenced the deployment of a SSN System.</terms:description>
+        <terms:created>12-04-2018</terms:created>
+        <terms:creator>David Corsar</terms:creator>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/Deployment -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ssn/Deployment">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#Actuate -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#Actuate">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Step"/>
+        <rdfs:comment xml:lang="en">A type of p-plan:Step in a p-plan:Plan that will typically be enacted by a sosa:Actuator performing a sosa:Actuation action.</rdfs:comment>
+        <rdfs:label xml:lang="en">Actuate</rdfs:label>
+        <skos:definition xml:lang="en">A type of p-plan:Step in a p-plan:Plan that will typically be enacted by a sosa:Actuator performing a sosa:Actuation action.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#ActuatorReplacement -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#ActuatorReplacement">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#SystemReplacement"/>
+        <rdfs:comment xml:lang="en">An activity during which a sosa:Actuator is replaced.  The actuator being replaced could be the entire system, or a subsystem of a system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Actuator Replacement</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which a sosa:Actuator is replaced.  The actuator being replaced could be the entire system, or a subsystem of a system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#BatteryReplacement -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#BatteryReplacement">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#ConsumableReplacement"/>
+        <rdfs:comment xml:lang="en">An activity during which battery/batteries that provide energy to an ssn:System was/were replaced.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Battery Replacement</rdfs:comment>
+        <skos:definition xml:lang="en">An activity during which battery/batteries that provide energy to an ssn:System was/were replaced.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#Calibration -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#Calibration">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
+        <rdfs:comment xml:lang="en">An activity during which a ssn:System (such as a sosa:Sensor, sosa:Sampler, sosa:Actuator) is (re)calibrated.</rdfs:comment>
+        <rdfs:label xml:lang="en">Calibration</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which a ssn:System (such as a sosa:Sensor, sosa:Sampler, sosa:Actuator) is (re)calibrated.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#Cleaning -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#Cleaning">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#Maintenance"/>
+        <rdfs:comment xml:lang="en">An activity during which (parts of) a ssn:System were cleaned.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cleaning</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which (parts of) a ssn:System were cleaned.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#CleaningExternalSurfaces -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#CleaningExternalSurfaces">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#Cleaning"/>
+        <rdfs:comment xml:lang="en">An activity during which the external surfaces of a ssn:System were cleaned.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cleaning External Surfaces</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which the external surfaces of a ssn:System were cleaned.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#CleaningInternalSurfaces -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#CleaningInternalSurfaces">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#Cleaning"/>
+        <rdfs:comment xml:lang="en">An activity during which the internal surfaces of a ssn:System were cleaned.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cleaning Internal Surfaces</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which the internal surfaces of a ssn:System were cleaned.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#ConsumableReplacement -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#ConsumableReplacement">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#Replacement"/>
+        <rdfs:comment xml:lang="en">An activity during which some consumable related to an ssn:System was replaced.</rdfs:comment>
+        <rdfs:label xml:lang="en">Consumable Replacement</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which some consumable related to an ssn:System was replaced.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#DataBiasCheck -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#DataBiasCheck">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DataQualityControl"/>
+        <rdfs:label xml:lang="en">Data Bias Check</rdfs:label>
+        <skos:definition xml:lang="en">A review of the data to identify any under or overestimation (&quot;bias&quot;) of values.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#DataQualityAssurance -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#DataQualityAssurance">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
+        <terms:description xml:lang="en">&quot;Adequate planning to ensure that sensor design and use met the performance requirements of your specific application.&quot; https://www.epa.gov/air-sensor-toolbox/how-use-air-sensors-air-sensor-guidebook#pane-1</terms:description>
+        <rdfs:label xml:lang="en">Data Quality Assurance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#DataQualityControl -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#DataQualityControl">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
+        <rdfs:comment xml:lang="en">Types of checks that are made using data generated by a ssn:System as part of ensuring that the quality of data produced by the ssn:System is as high as possible.</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Quality Control</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#DataReview -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#DataReview">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
+        <rdfs:comment xml:lang="en">A technical evaluation of data generated by a sosa:Sensor or sosa:Sampler for the purposes of identifying data quality issues.</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Review</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#DataValidation -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#DataValidation">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
+        <rdfs:label xml:lang="en">Data Validation</rdfs:label>
+        <skos:definition xml:lang="en">Activity during which data generated by a sosa:Sensor or sosa:Sampler are evaluated against a set of acceptance criteria to determine data quality and usability.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#DeploymentDesign -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#DeploymentDesign">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#SystemSelection"/>
+        <rdfs:comment xml:lang="en">An activity, typically conducted prior to deploying one or more ssn:System(s) during which one or more agents design the intended deployment of ssn:System(s) with the purpose of ensure the aims of the deployment achieved.  It is expected that more specific activities related to the design will be defined.</rdfs:comment>
+        <rdfs:label xml:lang="en">Deployment Design</rdfs:label>
+        <skos:definition xml:lang="en">An activity, typically conducted prior to deploying one or more ssn:System(s) during which one or more agents design the intended deployment of ssn:System(s) with the purpose of ensure the aims of the deployment achieved.  It is expected that more specific activities related to the design will be defined.</skos:definition>
+        <skos:example xml:lang="en">Selecting multiple locations accross a city where air quality sensors will be deployed to give an understanding of air quality.</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#DeploymentRelatedActivity -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#DeploymentRelatedActivity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:comment xml:lang="en">A Deployment Related Activity is an activity that occured at some time prior to, during, or following the deployment of one or more ssn:Systems.  Many of the initial subclasses, particularly those related to Maintenance are based on the text in https://www.epa.gov/air-sensor-toolbox/how-use-air-sensors-air-sensor-guidebook#pane-1</rdfs:comment>
+        <rdfs:label xml:lang="en">Deployment Related Activity</rdfs:label>
+        <skos:definition xml:lang="en">A Deployment Related Activity is an activity that occured at some time prior to, during, or following the deployment of one or more ssn:Systems.  Many of the initial subclasses, particularly those related to Maintenance are based on the text in https://www.epa.gov/air-sensor-toolbox/how-use-air-sensors-air-sensor-guidebook#pane-1</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#DevicePrecisionCheck -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#DevicePrecisionCheck">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DataQualityControl"/>
+        <rdfs:comment xml:lang="en">A check of the precision of the ssn:System, for example, by reviewing the data generated by a sosa:Sensor or sosa:Sampler, or viewing the actions of a sosa:Actuator.</rdfs:comment>
+        <rdfs:label xml:lang="en">Device Precision Check</rdfs:label>
+        <skos:definition xml:lang="en">A check of the precision of the ssn:System, for example, by reviewing the data generated by a sosa:Sensor or sosa:Sampler, or viewing the actions of a sosa:Actuator.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#FilterReplacement -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#FilterReplacement">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#ConsumableReplacement"/>
+        <rdfs:comment xml:lang="en">An activity during which filters of a ssn:System was/were replaced.</rdfs:comment>
+        <rdfs:label xml:lang="en">Filter Replacement</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which filters of a ssn:System was/were replaced.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#Installation -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#Installation">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
+        <rdfs:comment xml:lang="en">An activity during which an ssn:System is installed onto a sosa:Platform or as a subsystem of an ssn:System.  Such activities are typically completed before the start of the ssn:Deployment (and associated observing, sampling, and actuation) activity of the system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Installation</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which an ssn:System is installed onto a sosa:Platform or as a subsystem of an ssn:System.  Such activities are typically completed before the start of the ssn:Deployment (and associated observing, sampling, and actuation) activity of the system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#IoTCampaign -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#IoTCampaign">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:label xml:lang="en">Internet of Things Campaign</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#Maintenance -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#Maintenance">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
+        <rdfs:comment xml:lang="en">An activity related to maintaining a ssn:System.</rdfs:comment>
+        <rdfs:label xml:lang="en">Maintenance</rdfs:label>
+        <skos:definition xml:lang="en">An activity related to maintaining a ssn:System.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#Observe -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#Observe">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Step"/>
+        <rdfs:comment xml:lang="en">A type of p-plan:Step in a p-plan:Plan that will typically be enacted by a sosa:Sensor performing a sosa:Observation action.</rdfs:comment>
+        <rdfs:label xml:lang="en">Observe</rdfs:label>
+        <skos:definition xml:lang="en">A type of p-plan:Step in a p-plan:Plan that will typically be enacted by a sosa:Sensor performing a sosa:Observation action.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#PlatformAreaInspection -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#PlatformAreaInspection">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#Maintenance"/>
+        <rdfs:comment xml:lang="en">An activity during which the area surrounding a platform which hosts one or more ssn:Systems has been inspected to, for example, identify any debries or other artefacts that may impact the performance of one or more of the ssn:Systems.</rdfs:comment>
+        <rdfs:label xml:lang="en">Platform Area Inspection</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which the area surrounding a platform which hosts one or more ssn:Systems has been inspected to, for example, identify any debries or other artefacts that may impact the performance of one or more of the ssn:Systems.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#PlatformAreaTidy -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#PlatformAreaTidy">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#Cleaning"/>
+        <rdfs:comment xml:lang="en">An activity during which the area surrounding a platform which hosts one or more ssn:Systems has been tidied to, for example, remove any debries or other artefacts that may impact the performance of one or more of the ssn:Systems.</rdfs:comment>
+        <rdfs:label xml:lang="en">Platform Area Inspection</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which the area surrounding a platform which hosts one or more ssn:Systems has been tidied to, for example, remove any debries or other artefacts that may impact the performance of one or more of the ssn:Systems.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#RechargeBattery -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#RechargeBattery">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#Maintenance"/>
+        <rdfs:comment xml:lang="en">An activity during which the battery that supplies energy to a ssn:System is recharged.</rdfs:comment>
+        <rdfs:label xml:lang="en">Recharge Battery</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which the battery that supplies energy to a ssn:System is recharged.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#Removal -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#Removal">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
+        <rdfs:comment xml:lang="en">An activity during which an ssn:System is removed from a sosa:Platform or ssn:System.  Such activities are typically indicate the end of a particular ssn:Deployment (and associated observing, sampling, and actuation) activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Removal</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which an ssn:System is removed from a sosa:Platform or ssn:System.  Such activities are typically indicate the end of a particular ssn:Deployment (and associated observing, sampling, and actuation) activity.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#Replacement -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#Replacement">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#Maintenance"/>
+        <rdfs:comment xml:lang="en">An activity during which something associated with a ssn:System is replaced.</rdfs:comment>
+        <rdfs:label xml:lang="en">Replacement</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which something associated with a ssn:System is replaced.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#Sample -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#Sample">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Step"/>
+        <rdfs:comment xml:lang="en">A type of p-plan:Step in a p-plan:Plan that will typically be enacted by a sosa:Sampler performing a sosa:Sample action.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sample</rdfs:label>
+        <skos:definition xml:lang="en">A type of p-plan:Step in a p-plan:Plan that will typically be enacted by a sosa:Sampler performing a sosa:Sample action.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#SamplerReplacement -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#SamplerReplacement">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#SystemReplacement"/>
+        <rdfs:comment xml:lang="en">An activity during which a sosa:Sampler is replaced.  The sampler being replaced could be the entire system, or a subsystem of a system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sampler Replacement</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which a sosa:Sampler is replaced.  The sampler being replaced could be the entire system, or a subsystem of a system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#SensorReplacement -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#SensorReplacement">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#SystemReplacement"/>
+        <rdfs:comment xml:lang="en">An activity during which a sosa:Sensor is replaced.  The sensor being replaced could be the entire system, or a subsystem of a system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sensor Replacement</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which a sosa:Sensor is replaced.  The sensor being replaced could be the entire system, or a subsystem of a system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#SiteInspection -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#SiteInspection">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#SystemSelection"/>
+        <rdfs:comment xml:lang="en">An agent&apos;s visit / inspection of a site or potential site where one or more ssn:System(s) are / will be deployed.  The inspection may be carried out to, for example, assess the suitability of the site for the intended deployment, or to select the exact location of the sosa:Platform where a ssn:System will be hosted.</rdfs:comment>
+        <rdfs:label xml:lang="en">Site Inspection</rdfs:label>
+        <skos:definition xml:lang="en">An agent&apos;s visit / inspection of a site or potential site where one or more ssn:System(s) are / will be deployed.  The inspection may be carried out to, for example, assess the suitability of the site for the intended deployment, or to select the exact location of the sosa:Platform where a ssn:System will be hosted.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#SystemReplacement -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#SystemReplacement">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#Replacement"/>
+        <rdfs:comment xml:lang="en">An activity during which a ssn:System is replaced.  The system being replaced could be the entire system, or a subsystem of a system.</rdfs:comment>
+        <rdfs:label xml:lang="en">System Replacement</rdfs:label>
+        <skos:definition xml:lang="en">An activity during which a ssn:System is replaced.  The system being replaced could be the entire system, or a subsystem of a system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#SystemSelection -->
+
+    <owl:Class rdf:about="http://www.w3id.org/sdpo#SystemSelection">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
+        <rdfs:comment xml:lang="en">An activity, typically conducted prior to deploying a ssn:System during which an agent reviews and compares candidate ssn:Systems that could be deployed for the agent&apos;s intended purpose, with a view to selecting the (type of) ssn:System that will be deployed.</rdfs:comment>
+        <rdfs:label xml:lang="en">System Selection</rdfs:label>
+        <skos:definition xml:lang="en">An activity, typically conducted prior to deploying a ssn:System during which an agent reviews and compares candidate ssn:Systems that could be deployed for the agent&apos;s intended purpose, with a view to selecting the (type of) ssn:System that will be deployed.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/sdpo#ReplacedSystem -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/sdpo#ReplacedSystem">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Role"/>
+        <rdfs:comment xml:lang="en">Indicates the the ssn:System with this role was replaced by another ssn:System.</rdfs:comment>
+        <rdfs:label xml:lang="en">Replaced System</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/sdpo#ReplacementSystem -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/sdpo#ReplacementSystem">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Role"/>
+        <rdfs:comment xml:lang="en">Indicates that the ssn:System with this role is replacing another ssn:System.</rdfs:comment>
+        <rdfs:label xml:lang="en">Replacement System</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

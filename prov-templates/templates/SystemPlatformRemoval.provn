@@ -1,0 +1,32 @@
+// Simple provenance template for Removal of a system on a platform. 
+
+document
+
+   prefix prov <http://www.w3.org/ns/prov#> 
+   prefix xsd <http://www.w3.org/2001/XMLSchema#> 
+   prefix tmpl <http://openprovenance.org/tmpl#> 
+   prefix var <http://openprovenance.org/var#> 
+   prefix vargen <http://openprovenance.org/vargen#>
+   prefix sdpo <http://www.w3id.org/sdpo/>
+   prefix ssn <http://www.w3.org/ns/ssn/>
+   prefix sosa <http://www.w3.org/ns/sosa/>
+
+   bundle vargen:bundleId
+      entity(var:installedSystem, [sosa:isHostedBy='var:hostingPlatform'])
+      entity(var:hostingPlatform, [sosa:hosts='var:installedSystem'])
+      entity(var:removedSystem)
+      entity(var:updatedPlatform)
+
+      activity(var:removeActivity, -, -, [prov:type="sdpo:Removal"])
+
+      // var:installedSystem has been removed from var:hostingPlatform
+      revisionOf(var:removedSystem, var:installedSystem)
+      revisionOf(var:updatedPlatform, var:hostingPlatform)
+
+      used(var:removalActivity, var:installedSystem, -)
+      used(var:removalActivity, var:hostingPlatform, -)
+ 
+      wasGeneratedBy(var:removedSystem, var:removalActivity, -)
+      wasGeneratedBy(var:updatedPlatform, var:removalActivity, -)
+   endBundle
+endDocument

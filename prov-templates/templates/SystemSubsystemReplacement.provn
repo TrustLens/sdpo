@@ -1,0 +1,38 @@
+// Basic template for replacing an ssn:System (e.g. a sosa:Sensor, sosa:Actuator, sosa:Sampler) which is part of a ssn:System that is hosted by a platform
+
+document
+
+   prefix prov <http://www.w3.org/ns/prov#> 
+   prefix xsd <http://www.w3.org/2001/XMLSchema#> 
+   prefix tmpl <http://openprovenance.org/tmpl#> 
+   prefix var <http://openprovenance.org/var#> 
+   prefix vargen <http://openprovenance.org/vargen#>
+   prefix sdpo <http://www.w3id.org/sdpo/>
+   prefix ssn <http://www.w3.org/ns/ssn/>
+   prefix sosa <http://www.w3.org/ns/sosa/>
+   
+   
+   bundle vargen:bundleId
+      entity(var:system, [prov:type='prov:Collection', prov:hadMember='var:systemToBeReplaced', sosa:isHostedBy='var:platform'])
+      entity(var:systemToBeReplaced)
+      entity(var:revisedSystem, [prov:type='prov:Collection', prov:hadMember='var:replacementSystem', sosa:isHostedBy='var:revisedPlatform'])
+      entity(var:replacementSystem)
+   
+      activity(var:replacementActivity, -, -, [prov:type='sdpo:SystemReplacement'])
+      used(var:replacementActivity, var:system, -)
+      used(vargen:u1; var:replacementActivity, var:systemToBeReplaced, -, [prov:role='sdpo:ReplacedSystem'])
+      used(vargen:u2; var:replacementActivity, var:replacementSystem, -, [prov:role='sdpo:ReplacementSystem'])
+      wasGeneratedBy(var:revisedSystem, var:replacementActivity, -)
+      wasInvalidatedBy(var:system, var:replacementActivity, -)
+      wasDerivedFrom(vargen:d; var:revisedSystem, var:system, var:replacementActivity, -, -,  [prov:type='prov:Revision'])
+      
+      entity(var:platform, [sosa:hosts='var:system'])
+      entity(var:revisedPlatform, [sosa:hosts='var:revisedSystem')
+      used(var:replacementActivity, var:platform, -)
+      wasInvalidatedBy(var:platform, var:replacementActivity, -)
+      wasGeneratedBy(var:revisedPlatform, var:replacementActivity, -)
+      wasDerivedFrom(vargen:d2; var:revisedPlatform, var:platform, var:replacementActivity, -, -,  [prov:type='prov:Revision'])
+      
+   endBundle
+   
+endDocument

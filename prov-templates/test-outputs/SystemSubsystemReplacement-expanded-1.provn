@@ -1,0 +1,24 @@
+document
+bundle uuid:3f36a262-c539-4449-9512-41a920897f77
+prefix ex <http://example.com/>
+prefix uuid <urn:uuid:>
+prefix sdpo <http://www.w3id.org/sdpo/>
+
+entity(ex:smartMeter,[prov:type = 'prov:Collection'])
+entity(ex:sensor1)
+entity(ex:smartMeter_v1,[prov:type = 'prov:Collection'])
+entity(ex:sensor2)
+activity(ex:replaceSensor,-,-,[prov:type = 'sdpo:SensorReplacement'])
+used(ex:replaceSensor,ex:smartMeter,-)
+used(uuid:94c2d923-dbc3-4378-9472-674dd272b7a7;ex:replaceSensor,ex:sensor1,-,[prov:role = 'sdpo:ReplacedSystem'])
+used(uuid:885390f2-b559-45e0-8266-07d59a3e7706;ex:replaceSensor,ex:sensor2,-,[prov:role = 'sdpo:ReplacementSystem'])
+wasGeneratedBy(ex:smartMeter_v1,ex:replaceSensor,-)
+wasInvalidatedBy(ex:smartMeter,ex:replaceSensor,-)
+wasDerivedFrom(uuid:9ffc751e-928b-4516-b00b-7e1f659788b4;ex:smartMeter_v1, ex:smartMeter, ex:replaceSensor, -, -,[prov:type = 'prov:Revision'])
+entity(ex:platform)
+entity(ex:platform_v1)
+used(ex:replaceSensor,ex:platform,-)
+wasInvalidatedBy(ex:platform,ex:replaceSensor,-)
+wasGeneratedBy(ex:platform_v1,ex:replaceSensor,-)
+endBundle
+endDocument

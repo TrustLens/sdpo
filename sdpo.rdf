@@ -185,7 +185,7 @@
     <!-- http://www.w3id.org/sdpo#DeploymentDesign -->
 
     <owl:Class rdf:about="http://www.w3id.org/sdpo#DeploymentDesign">
-        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#SystemSelection"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
         <rdfs:comment xml:lang="en">An activity, typically conducted prior to deploying one or more ssn:System(s) during which one or more agents design the intended deployment of ssn:System(s) with the purpose of ensure the aims of the deployment achieved.  It is expected that more specific activities related to the design will be defined.</rdfs:comment>
         <rdfs:label xml:lang="en">Deployment Design</rdfs:label>
         <skos:definition xml:lang="en">An activity, typically conducted prior to deploying one or more ssn:System(s) during which one or more agents design the intended deployment of ssn:System(s) with the purpose of ensure the aims of the deployment achieved.  It is expected that more specific activities related to the design will be defined.</skos:definition>
@@ -360,7 +360,7 @@
     <!-- http://www.w3id.org/sdpo#SiteInspection -->
 
     <owl:Class rdf:about="http://www.w3id.org/sdpo#SiteInspection">
-        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#SystemSelection"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/sdpo#DeploymentRelatedActivity"/>
         <rdfs:comment xml:lang="en">An agent&apos;s visit / inspection of a site or potential site where one or more ssn:System(s) are / will be deployed.  The inspection may be carried out to, for example, assess the suitability of the site for the intended deployment, or to select the exact location of the sosa:Platform where a ssn:System will be hosted.</rdfs:comment>
         <rdfs:label xml:lang="en">Site Inspection</rdfs:label>
         <skos:definition xml:lang="en">An agent&apos;s visit / inspection of a site or potential site where one or more ssn:System(s) are / will be deployed.  The inspection may be carried out to, for example, assess the suitability of the site for the intended deployment, or to select the exact location of the sosa:Platform where a ssn:System will be hosted.</skos:definition>

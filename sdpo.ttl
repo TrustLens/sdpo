@@ -125,7 +125,7 @@
 
 ###  http://www.w3id.org/sdpo#DeploymentDesign
 :DeploymentDesign rdf:type owl:Class ;
-                  rdfs:subClassOf :SystemSelection ;
+                  rdfs:subClassOf :DeploymentRelatedActivity ;
                   rdfs:comment "An activity, typically conducted prior to deploying one or more ssn:System(s) during which one or more agents design the intended deployment of ssn:System(s) with the purpose of ensure the aims of the deployment achieved.  It is expected that more specific activities related to the design will be defined."@en ;
                   rdfs:label "Deployment Design"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "An activity, typically conducted prior to deploying one or more ssn:System(s) during which one or more agents design the intended deployment of ssn:System(s) with the purpose of ensure the aims of the deployment achieved.  It is expected that more specific activities related to the design will be defined."@en ;
@@ -252,7 +252,7 @@
 
 ###  http://www.w3id.org/sdpo#SiteInspection
 :SiteInspection rdf:type owl:Class ;
-                rdfs:subClassOf :SystemSelection ;
+                rdfs:subClassOf :DeploymentRelatedActivity ;
                 rdfs:comment "An agent's visit / inspection of a site or potential site where one or more ssn:System(s) are / will be deployed.  The inspection may be carried out to, for example, assess the suitability of the site for the intended deployment, or to select the exact location of the sosa:Platform where a ssn:System will be hosted."@en ;
                 rdfs:label "Site Inspection"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "An agent's visit / inspection of a site or potential site where one or more ssn:System(s) are / will be deployed.  The inspection may be carried out to, for example, assess the suitability of the site for the intended deployment, or to select the exact location of the sosa:Platform where a ssn:System will be hosted."@en .

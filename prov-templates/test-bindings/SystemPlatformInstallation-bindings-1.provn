@@ -7,8 +7,9 @@ prefix ex <http://example.com/#>
 
 entity(var:usedSystem, [tmpl:value_0 = 'ex:smartMeter'])
 entity(var:usedPlatform, [tmpl:value_0 = 'ex:platform'])
-entity(var:usedS, [tmpl:value_0 = 'ex:platform2'])
+
 
 entity(var:installedSystem, [tmpl:value_0 = 'ex:smartMeter_v1'])
 entity(var:hostingPlatform, [tmpl:value_0 = 'ex:platform_v1'])
 entity(var:installActivity, [tmpl:value_0 = 'ex:install'])
+endDocument

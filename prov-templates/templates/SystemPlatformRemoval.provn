@@ -20,13 +20,13 @@ document
       activity(var:removeActivity, -, -, [prov:type="sdpo:Removal"])
 
       // var:installedSystem has been removed from var:hostingPlatform
-      revisionOf(var:removedSystem, var:installedSystem)
-      revisionOf(var:updatedPlatform, var:hostingPlatform)
+      wasDerivedFrom(var:removedSystem, var:installedSystem, [prov:type='prov:Revision'])
+      wasDerivedFrom(var:updatedPlatform, var:hostingPlatform, [prov:type='prov:Revision'])
 
-      used(var:removalActivity, var:installedSystem, -)
-      used(var:removalActivity, var:hostingPlatform, -)
+      used(var:removeActivity, var:installedSystem, -)
+      used(var:removeActivity, var:hostingPlatform, -)
  
-      wasGeneratedBy(var:removedSystem, var:removalActivity, -)
-      wasGeneratedBy(var:updatedPlatform, var:removalActivity, -)
+      wasGeneratedBy(var:removedSystem, var:removeActivity, -)
+      wasGeneratedBy(var:updatedPlatform, var:removeActivity, -)
    endBundle
 endDocument

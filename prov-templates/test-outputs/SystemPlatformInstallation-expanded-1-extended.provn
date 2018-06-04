@@ -3,11 +3,13 @@ bundle uuid:fcdc887c-f013-46dd-b701-c216dee1661f
 prefix ex <http://example.com/#>
 prefix uuid <urn:uuid:>
 prefix sdpo <http://www.w3id.org/sdpo/>
+prefix ssn <http:www.w3.org/ns/ssn/>
+prefix sosa <http:www.w3.org/ns/sosa/>
 
-entity(ex:smartMeter)
-entity(ex:platform)
-entity(ex:smartMeter_v1)
-entity(ex:platform_v1)
+entity(ex:smartMeter, [prov:type='ssn:System'])
+entity(ex:platform, [prov:type='sosa:Platform'])
+entity(ex:smartMeter_v1, [sosa:isHostedBy='ex:platform_v1'])
+entity(ex:platform_v1,  [sosa:hosts='ex:smartMeter_v1'])
 activity(ex:install,-,-,[prov:type = 'sdpo:Installation'])
 specializationOf(ex:smartMeter_v1,ex:smartMeter)
 specializationOf(ex:platform_v1,ex:platform)

@@ -1,0 +1,15 @@
+document
+prefix prov <http://www.w3.org/ns/prov#> 
+prefix xsd <http://www.w3.org/2001/XMLSchema#> 
+prefix tmpl <http://openprovenance.org/tmpl#> 
+prefix var <http://openprovenance.org/var#> 
+prefix ex <http://example.com/#> 
+
+entity(var:installedSystem, [tmpl:value_0 = 'ex:smartMeter_v3'])
+entity(var:hostingPlatform, [tmpl:value_0 = 'ex:platform_v2'])
+
+
+entity(var:removedSystem, [tmpl:value_0 = 'ex:smartMeter_v4'])
+entity(var:updatedPlatform, [tmpl:value_0 = 'ex:platform_v3'])
+entity(var:removeActivity, [tmpl:value_0 = 'ex:remove'])
+endDocument

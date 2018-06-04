@@ -1,0 +1,27 @@
+document
+bundle uuid:4147d89d-e57d-48bc-82c0-6014f173284b
+prefix ex <http://example.com/>
+prefix uuid <urn:uuid:>
+prefix ssn <http://www.w3.org/ns/ssn#>
+prefix sosa <http://www.w3.org/ns/sosa#>
+prefix sdpo <http://www.w3id.org/sdpo/>
+
+entity(ex:smartMeter_v1,[prov:type = 'prov:Collection', prov:type='ssn:System', prov:hadMember='ex:sensor_1', ssn:hasSubSystem='ex:sensor_1', sosa:isHostedBy='ex:platform_v1'])
+entity(ex:sensor_1, [prov:type='ssn:System'])
+entity(ex:smartMeter_v2, [prov:hadMember='ex:sensor_2', ssn:hasSubSystem='ex:sensor_2',sosa:isHostedBy='ex:platform_v2' ])
+entity(ex:sensor_2)
+activity(ex:replaceSensor,-,-,[prov:type = 'sdpo:SystemReplacement'])
+used(ex:replaceSensor,ex:smartMeter_v1,-)
+used(uuid:63e7381b-2678-494f-a7e4-242b2b6f47fe;ex:replaceSensor,ex:sensor_1,-,[prov:role = 'sdpo:ReplacedSystem'])
+used(uuid:83393c0e-44f4-40ca-a0f7-a787b90cf425;ex:replaceSensor,ex:sensor_2,-,[prov:role = 'sdpo:ReplacementSystem'])
+wasGeneratedBy(ex:smartMeter_v2,ex:replaceSensor,-)
+wasInvalidatedBy(ex:smartMeter_v1,ex:replaceSensor,-)
+wasDerivedFrom(uuid:292b423d-8aab-4d64-b41e-be0f8dda21ab;ex:smartMeter_v2, ex:smartMeter_v1, ex:replaceSensor, -, -,[prov:type = 'prov:Revision'])
+entity(ex:platform_v1, [prov:type = 'sosa:Platform', sosa:hosts='ex:smartMeter_v1'])
+entity(ex:platform_v2, [prov:type = 'sosa:Platform', sosa:hosts='ex:smartMeter_v2'])
+used(ex:replaceSensor,ex:platform_v1,-)
+wasInvalidatedBy(ex:platform_v1,ex:replaceSensor,-)
+wasGeneratedBy(ex:platform_v2,ex:replaceSensor,-)
+wasDerivedFrom(uuid:8773c8d5-b132-4f97-878e-60ed4b2e0d3e;ex:platform_v2, ex:platform_v1, ex:replaceSensor, -, -,[prov:type = 'prov:Revision'])
+endBundle
+endDocument

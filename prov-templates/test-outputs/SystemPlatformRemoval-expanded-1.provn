@@ -1,0 +1,18 @@
+document
+bundle uuid:daec7221-71f5-462a-9918-d0bb986b5061
+prefix ex <http://example.com/#>
+prefix uuid <urn:uuid:>
+
+entity(ex:smartMeter_v3, [sosa:isHostedBy='ex:platform_v2'])
+entity(ex:platform_v2, [sosa:hosts='ex:smartMeter_v3'])
+entity(ex:smartMeter_v4)
+entity(ex:platform_v3)
+activity(ex:remove,-,-,[prov:type = "sdpo:Removal" %% xsd:string])
+wasDerivedFrom(ex:smartMeter_v4, ex:smartMeter_v3,[prov:type = 'prov:Revision'])
+wasDerivedFrom(ex:platform_v3, ex:platform_v2,[prov:type = 'prov:Revision'])
+used(ex:remove,ex:smartMeter_v3,-)
+used(ex:remove,ex:platform_v2,-)
+wasGeneratedBy(ex:smartMeter_v4,ex:remove,-)
+wasGeneratedBy(ex:platform_v3,ex:remove,-)
+endBundle
+endDocument

@@ -5,10 +5,11 @@ prefix tmpl <http://openprovenance.org/tmpl#>
 prefix var <http://openprovenance.org/var#> 
 prefix ex <http://example.com/> 
 
-entity(var:system, [tmpl:value_0 = 'ex:smartMeter'])
-entity(var:systemToBeReplaced, [tmpl:value_0 = 'ex:sensor1'])
-entity(var:revisedSystem, [tmpl:value_0 = 'ex:smartMeter_v1'])
-entity(var:replacementSystem, [tmpl:value_0 = 'ex:sensor2'])
+entity(var:system, [tmpl:value_0 = 'ex:smartMeter_v1'])
+entity(var:systemToBeReplaced, [tmpl:value_0 = 'ex:sensor_1'])
+entity(var:revisedSystem, [tmpl:value_0 = 'ex:smartMeter_v2'])
+entity(var:replacementSystem, [tmpl:value_0 = 'ex:sensor_2'])
 entity(var:replacementActivity, [tmpl:value_0 = 'ex:replaceSensor'])
-entity(var:platform, [tmpl:value_0 = 'ex:platform'])
-entity(var:revisedPlatform, [tmpl:value_0 = 'ex:platform_v1'])
+entity(var:platform, [tmpl:value_0 = 'ex:platform_v1'])
+entity(var:revisedPlatform, [tmpl:value_0 = 'ex:platform_v2'])
+endDocument

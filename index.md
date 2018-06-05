@@ -40,4 +40,4 @@ There may come a point when the system is removed, which may well indicate the e
 This example is the mirror of the installation example above: the *smartMeter_v3* which is hosed by the *platform_v2* is used by the *remove* activity.  This generates new descriptions of the smarter meter (*smartMeter_v4*) and platform (*platform_v3*) reflecting that the smart meter is no longer hosted by the platform.  
 
 ## Acknowledgements
-We owe many, many thanks to Luc Moreau and his team at Southampton for all their work on the PROV-Templates and ProvTemplate framework, and for providing the [ProvTranslator](https://provenance.ecs.soton.ac.uk/validator/view/translator.html) service which was used to generate the images included in this page.
+We owe many, many thanks to Luc Moreau and his team for all their work on the PROV-Templates and ProvTemplate framework, and for providing the [ProvTranslator](https://provenance.ecs.soton.ac.uk/validator/view/translator.html) service which was used to generate the images included in this page.

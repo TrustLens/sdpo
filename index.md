@@ -37,7 +37,15 @@ There may come a point when the system is removed, which may well indicate the e
 
 ![Example provenance record describing the removal of a smart meter from a platform.](docs-resources/install-system-platform.JPG).
 
-This example is the mirror of the installation example above: the *smartMeter_v3* which is hosed by the *platform_v2* is used by the *remove* activity.  This generates new descriptions of the smarter meter (*smartMeter_v4*) and platform (*platform_v3*) reflecting that the smart meter is no longer hosted by the platform.  
+This example is the mirror of the installation example above: the *smartMeter_v3* which is hosed by the *platform_v2* is used by the *remove* activity.  This generates new descriptions of the smarter meter (*smartMeter_v4*) and platform (*platform_v3*) reflecting that the smart meter is no longer hosted by the platform.
+
+## References
+The Sensor Deployment Provenance Ontology is described in the IPAW 2018 Paper [available from the conference proceedings](http://www.lamsade.dauphine.fr/~belhajjame/Program_files/pdf/s9_p4.pdf) or the University of Aberdeen [Pure System](https://abdn.pure.elsevier.com/en/publications/capturing-the-provenance-of-internet-of-things-deployments).  Presently the proceedings are in press, but the base referene is:
+
+Corsar, D., Markovic, M., & Edwards, P. (2018). Capturing the Provenance of Internet of Things Deployments. In Proceedings of International Provenance and annotation workshop (IPAW) (Lecture Notes in Computer Science). Springer . 
+
+
+
 
 ## Acknowledgements
 We owe many, many thanks to Luc Moreau and his team for all their work on the PROV-Templates and ProvTemplate framework, and for providing the [ProvTranslator](https://provenance.ecs.soton.ac.uk/validator/view/translator.html) service which was used to generate the images included in this page.
